@@ -1,15 +1,8 @@
-QM_ID : 231223922
-BUPT_ID : 2023213692
-Name : Chengyi_Jia
-QM_ID : 231223955
-BUPT_ID : 2023213695
-Name : Kehan_Meng
-QM_ID : 231223818
-BUPT_ID : 2023213682
-Name : Zhizhen_Cai
-QM_ID : 231223461
-BUPT_ID : 2023213647
-Name : Ke_Ning
-QM_ID：231223508
-BUPT_ID : 2023213651
-Name : Yutong_Shi
+| Name | QM_ID | BUPT_ID |
+| --- | --- | --- |
+| Hengyi_Zhang | 231223335 | 2023213634 |
+| Chengyi_Jia | 231223922 | 2023213692 |
+| Kehan_Meng | 231223955 | 2023213695 |
+| Zhizhen_Cai | 231223818 | 2023213682 |
+| Ke_Ning | 231223461 | 2023213647 |
+| Yutong_Shi | 231223508 | 2023213651 |

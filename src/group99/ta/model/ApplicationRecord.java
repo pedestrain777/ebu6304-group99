@@ -13,6 +13,7 @@ public class ApplicationRecord {
     private String opportunityId;
     private String motivation;
     private String status;
+    private String screeningContent;
     private String submittedAt;
 
     // screening task submission
@@ -127,5 +128,13 @@ public class ApplicationRecord {
 
     public void setScreeningSubmittedAt(String screeningSubmittedAt) {
         this.screeningSubmittedAt = screeningSubmittedAt;
+    }
+    
+    public String getScreeningContent() {
+        return screeningContent;
+    }
+
+    public void setScreeningContent(String screeningContent) {
+        this.screeningContent = screeningContent;
     }
 }

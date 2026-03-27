@@ -58,7 +58,7 @@ public class ApplicationService {
         }
         return null;
     }
-    
+
     public void updateStatus(String applicationId, String status) {
         List<ApplicationRecord> list = dataStore.loadApplications();
 
@@ -78,5 +78,45 @@ public class ApplicationService {
 
         dataStore.saveApplications(list);
         System.out.println("Application status updated to: " + status);
+    }
+
+    public void submitScreening(String applicationId, String screeningContent) {
+        List<ApplicationRecord> list = dataStore.loadApplications();
+
+        boolean found = false;
+
+        for (ApplicationRecord record : list) {
+            if (record.getApplicationId().equals(applicationId)) {
+
+                // 防止重复提交 screening（加分点）
+                if (record.getScreeningContent() != null && !record.getScreeningContent().isEmpty()) {
+                    System.out.println("Screening already submitted!");
+                    return;
+                }
+
+                record.setScreeningContent(screeningContent);
+                record.setStatus("screening_submitted");
+
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("Application not found!");
+            return;
+        }
+
+        dataStore.saveApplications(list);
+        System.out.println("Screening submitted successfully!");
+    }
+
+    public boolean hasSubmittedScreening(String applicationId) {
+        for (ApplicationRecord record : dataStore.loadApplications()) {
+            if (record.getApplicationId().equals(applicationId)) {
+                return record.getScreeningContent() != null 
+                        && !record.getScreeningContent().isEmpty();
+            }
+        }
+        return false;
     }
 }
